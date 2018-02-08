@@ -117,6 +117,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       })();
 
       // Load pre-caching Service Worker
+      /**
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
           navigator.serviceWorker.register('service-worker.js', {
@@ -124,6 +125,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           });
         });
       }
+      **/
     </script>
     <link rel="import" href="src/my-app.html">
 
@@ -144,11 +146,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         var profile = googleUser.getBasicProfile();
 
         if (profile.getEmail().match(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[bbva.com]*$/) !== null) {
-          console.log(profile);
           console.log('ID: ' + profile.getId());
           console.log('Name: ' + profile.getName());
-          console.log('Given: ' + profile.getGivenName());
-          console.log('Family: ' + profile.getFamilyName());
           console.log('Image URL: ' + profile.getImageUrl());
           console.log('Email: ' + profile.getEmail());
 
@@ -156,8 +155,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           document.body.appendChild(element);
         } else {
           var auth2 = gapi.auth2.getAuthInstance();
-          auth2.signOut().then(function () {
-            console.log('User signed out.');
+          auth2.signOut().then(function(){
+            auth2.disconnect();
           });
         }
       }
