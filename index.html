@@ -142,22 +142,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <body>
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <script>
+      var user;
+
       function onSignIn(googleUser) {
         var profile = googleUser.getBasicProfile();
 
         if (profile.getEmail().match(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[bbva.com]*$/) !== null) {
-          console.log('ID: ' + profile.getId());
-          console.log('Name: ' + profile.getName());
-          console.log('Image URL: ' + profile.getImageUrl());
-          console.log('Email: ' + profile.getEmail());
+          user = {
+            id: profile.getId(),
+            name: profile.getName(),
+            image: profile.getImageUrl(),
+            email: profile.getEmail()
+          };
 
           var element = document.createElement('my-app'); 
           document.body.appendChild(element);
         } else {
-          var auth2 = gapi.auth2.getAuthInstance();
-          auth2.signOut().then(function(){
-            auth2.disconnect();
-          });
+          console.log('Sesión no permitida...');
         }
       }
     </script>
