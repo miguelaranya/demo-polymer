@@ -172,11 +172,31 @@
       "type": "document",
       "weight": 1
     },
-    "src/my-icons.html": {
+    "bower_components/iron-icons/iron-icons.html": {
       "type": "document",
       "weight": 1
     },
     "bower_components/iron-iconset-svg/iron-iconset-svg.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/paper-image/paper-image.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/paper-material/paper-material.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/paper-styles/shadow.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/paper-material/paper-material-shared-styles.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "src/my-icons.html": {
       "type": "document",
       "weight": 1
     }
