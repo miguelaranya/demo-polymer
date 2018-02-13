@@ -152,22 +152,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       },
 
       _signOut: function() {
-        console.log('Redireccionando...');
-        window.location.href = '/_gcp_iap/clear_login_cookie';
-      }
-
-      /**
-      _signOut: function() {
         var auth2 = gapi.auth2.getAuthInstance();
         auth2.signOut().then(function(){
           console.log('Cerrando sesión...');
           gapi.auth2.getAuthInstance().disconnect();
-          user = {};
+          user = null;
           console.log('Redireccionando...');
           window.location.href = '/';
         });
       }
-      */
     });
   </script>
 </dom-module>

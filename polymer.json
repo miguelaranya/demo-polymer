@@ -21,10 +21,16 @@
   },
   "builds": [
     {
-      "preset": "es6-bundled"
+      "preset": "es6-bundled",
+      "js": { "minify" : false},
+      "css": { "minify" : false},
+      "html": { "minify" : false}
     },
     {
-      "preset": "es6-unbundled"
+      "preset": "es6-unbundled",
+      "js": { "minify" : false},
+      "css": { "minify" : false},
+      "html": { "minify" : false}
     }
   ]
 }
